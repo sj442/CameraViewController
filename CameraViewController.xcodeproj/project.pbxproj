@@ -13,6 +13,10 @@
 		3FEB98CE1A7AC9D000411BE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */; };
 		3FEB98D11A7AC9D000411BE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CF1A7AC9D000411BE5 /* LaunchScreen.xib */; };
 		3FEB98DD1A7AC9D000411BE5 /* CameraViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98DC1A7AC9D000411BE5 /* CameraViewControllerTests.m */; };
+		3FEB98F91A7C1F4B00411BE5 /* whiteShutter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F51A7C1F4B00411BE5 /* whiteShutter.png */; };
+		3FEB98FA1A7C1F4B00411BE5 /* grayShutter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F61A7C1F4B00411BE5 /* grayShutter.png */; };
+		3FEB98FB1A7C1F4B00411BE5 /* yellowFlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F71A7C1F4B00411BE5 /* yellowFlash.png */; };
+		3FEB98FC1A7C1F4B00411BE5 /* whiteFlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F81A7C1F4B00411BE5 /* whiteFlash.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		3FEB98D61A7AC9D000411BE5 /* CameraViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEB98DB1A7AC9D000411BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FEB98DC1A7AC9D000411BE5 /* CameraViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewControllerTests.m; sourceTree = "<group>"; };
+		3FEB98F51A7C1F4B00411BE5 /* whiteShutter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteShutter.png; sourceTree = "<group>"; };
+		3FEB98F61A7C1F4B00411BE5 /* grayShutter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayShutter.png; sourceTree = "<group>"; };
+		3FEB98F71A7C1F4B00411BE5 /* yellowFlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowFlash.png; sourceTree = "<group>"; };
+		3FEB98F81A7C1F4B00411BE5 /* whiteFlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteFlash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,10 @@
 				3FEB98C71A7AC9D000411BE5 /* ViewController.h */,
 				3FEB98C81A7AC9D000411BE5 /* ViewController.m */,
 				3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */,
+				3FEB98F51A7C1F4B00411BE5 /* whiteShutter.png */,
+				3FEB98F61A7C1F4B00411BE5 /* grayShutter.png */,
+				3FEB98F71A7C1F4B00411BE5 /* yellowFlash.png */,
+				3FEB98F81A7C1F4B00411BE5 /* whiteFlash.png */,
 				3FEB98CF1A7AC9D000411BE5 /* LaunchScreen.xib */,
 				3FEB98C01A7AC9D000411BE5 /* Supporting Files */,
 			);
@@ -196,8 +208,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEB98FC1A7C1F4B00411BE5 /* whiteFlash.png in Resources */,
+				3FEB98FA1A7C1F4B00411BE5 /* grayShutter.png in Resources */,
+				3FEB98F91A7C1F4B00411BE5 /* whiteShutter.png in Resources */,
 				3FEB98D11A7AC9D000411BE5 /* LaunchScreen.xib in Resources */,
 				3FEB98CE1A7AC9D000411BE5 /* Images.xcassets in Resources */,
+				3FEB98FB1A7C1F4B00411BE5 /* yellowFlash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +416,7 @@
 				3FEB98E21A7AC9D000411BE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FEB98E31A7AC9D000411BE5 /* Build configuration list for PBXNativeTarget "CameraViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +425,7 @@
 				3FEB98E51A7AC9D000411BE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
