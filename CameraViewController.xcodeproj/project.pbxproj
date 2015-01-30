@@ -10,7 +10,6 @@
 		3FEB98C31A7AC9D000411BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C21A7AC9D000411BE5 /* main.m */; };
 		3FEB98C61A7AC9D000411BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C51A7AC9D000411BE5 /* AppDelegate.m */; };
 		3FEB98C91A7AC9D000411BE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C81A7AC9D000411BE5 /* ViewController.m */; };
-		3FEB98CC1A7AC9D000411BE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CA1A7AC9D000411BE5 /* Main.storyboard */; };
 		3FEB98CE1A7AC9D000411BE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */; };
 		3FEB98D11A7AC9D000411BE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CF1A7AC9D000411BE5 /* LaunchScreen.xib */; };
 		3FEB98DD1A7AC9D000411BE5 /* CameraViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98DC1A7AC9D000411BE5 /* CameraViewControllerTests.m */; };
@@ -34,7 +33,6 @@
 		3FEB98C51A7AC9D000411BE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3FEB98C71A7AC9D000411BE5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3FEB98C81A7AC9D000411BE5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3FEB98CB1A7AC9D000411BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3FEB98D01A7AC9D000411BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3FEB98D61A7AC9D000411BE5 /* CameraViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +83,6 @@
 				3FEB98C51A7AC9D000411BE5 /* AppDelegate.m */,
 				3FEB98C71A7AC9D000411BE5 /* ViewController.h */,
 				3FEB98C81A7AC9D000411BE5 /* ViewController.m */,
-				3FEB98CA1A7AC9D000411BE5 /* Main.storyboard */,
 				3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */,
 				3FEB98CF1A7AC9D000411BE5 /* LaunchScreen.xib */,
 				3FEB98C01A7AC9D000411BE5 /* Supporting Files */,
@@ -199,7 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FEB98CC1A7AC9D000411BE5 /* Main.storyboard in Resources */,
 				3FEB98D11A7AC9D000411BE5 /* LaunchScreen.xib in Resources */,
 				3FEB98CE1A7AC9D000411BE5 /* Images.xcassets in Resources */,
 			);
@@ -244,14 +240,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3FEB98CA1A7AC9D000411BE5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3FEB98CB1A7AC9D000411BE5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3FEB98CF1A7AC9D000411BE5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
