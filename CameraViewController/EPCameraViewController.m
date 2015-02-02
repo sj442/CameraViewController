@@ -5,9 +5,9 @@
 //  Created by Sunayna Jain on 1/29/15.
 //  Copyright (c) 2015 Enhatch. All rights reserved.
 
-#import "ViewController.h"
+#import "EPCameraViewController.h"
 
-@interface ViewController ()
+@interface EPCameraViewController ()
 
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 
@@ -15,21 +15,43 @@
 
 @property (weak, nonatomic) UIView *buttonView;
 
+@property (weak, nonatomic) UIView *mainOverlayView;
+
 @end
 
-@implementation ViewController
+@implementation EPCameraViewController
 
 - (void)viewDidLoad {
   
   [super viewDidLoad];
   
-  self.title = @"Camera";
-  UIView *containerView = [[UIView alloc]initWithFrame:CGRectMake(0, 42, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-42)];
+  UIView *containerView = [UIView new];
   [self.view addSubview:containerView];
   self.containerView = containerView;
+  CGRect frame = CGRectZero;
+  frame.origin.x = 0;
+  frame.origin.y = 42;
+  frame.size.width = CGRectGetWidth(self.view.frame);
+  frame.size.height = CGRectGetHeight(self.view.frame)-42;
+  containerView.frame =frame;
   
   [self addImagePickerController];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  
+  UIView *overlayView = [self createCustomOverlayView];
+  [self.imagePicker setCameraOverlayView:overlayView];
+}
+
+- (void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Layout
 
 - (void)addImagePickerController
 {
@@ -48,93 +70,18 @@
   imagePicker.view.bounds = self.containerView.bounds;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-  [super viewDidAppear:animated];
-  
-  UIView *overlayView = [self createCustomOverlayView];
-  [self.imagePicker setCameraOverlayView:overlayView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-}
-
 - (UIView *)createCustomOverlayView
 {
   UIView *mainOverlayView = [[UIView alloc] initWithFrame:self.view.bounds];
+  self.mainOverlayView = mainOverlayView;
   
-  CGFloat cameraHeight = CGRectGetHeight(self.view.frame)-64-100;
-  CGFloat lineViewHeight = cameraHeight - 50;
-  CGFloat lineViewWidth = lineViewHeight*8.27/11.02;
-  CGFloat xOrigin = (320- lineViewWidth-10)/2;
-  
-  UIView *leftLine = [UIView new];
-  leftLine.backgroundColor = [UIColor whiteColor];
-  [mainOverlayView addSubview:leftLine];
-  CGRect frame = CGRectZero;
-  frame.origin.x = xOrigin;
-  frame.origin.y = 25;
-  frame.size.width = 5;
-  frame.size.height = lineViewHeight;
-  leftLine.frame = frame;
-  
-  UIView *rightLine = [UIView new];
-  rightLine.backgroundColor = [UIColor whiteColor];
-  [mainOverlayView addSubview:rightLine];
-  frame = CGRectZero;
-  frame.origin.x = xOrigin+lineViewWidth+5;
-  frame.origin.y = 25;
-  frame.size.width = 5;
-  frame.size.height = lineViewHeight;
-  rightLine.frame =frame;
-  
-  UIView *leftUpperLine = [UIView new];
-  leftUpperLine.backgroundColor = [UIColor whiteColor];
-  [mainOverlayView addSubview:leftUpperLine];
-  frame = CGRectZero;
-  frame.origin.x = xOrigin;
-  frame.origin.y = 20;
-  frame.size.width = 20;
-  frame.size.height = 5;
-  leftUpperLine.frame = frame;
-  
-  UIView *leftLowerLine = [UIView new];
-  leftLowerLine.backgroundColor = [UIColor whiteColor];
-  [mainOverlayView addSubview:leftLowerLine];
-  frame = CGRectZero;
-  frame.origin.x = xOrigin;
-  frame.origin.y = 20+lineViewHeight;
-  frame.size.width = 20;
-  frame.size.height = 5;
-  leftLowerLine.frame = frame;
-  
-  UIView *rightUpperLine = [UIView new];
-  rightUpperLine.backgroundColor = [UIColor whiteColor];
-  [mainOverlayView addSubview:rightUpperLine];
-  frame = CGRectZero;
-  frame.origin.x = xOrigin+lineViewWidth-10;
-  frame.origin.y = 20;
-  frame.size.width = 20;
-  frame.size.height = 5;
-  rightUpperLine.frame = frame;
-  
-  UIView *rightLowerLine = [UIView new];
-  rightLowerLine.backgroundColor = [UIColor whiteColor];
-  [mainOverlayView addSubview:rightLowerLine];
-  frame = CGRectZero;
-  frame.origin.x = xOrigin+lineViewWidth-10;
-  frame.origin.y = 20+lineViewHeight;
-  frame.size.width = 20;
-  frame.size.height = 5;
-  rightLowerLine.frame = frame;
+  [self setupCameraFrame];
   
   UIView *buttonView = [UIView new];
   buttonView.backgroundColor = [UIColor blackColor];
   [mainOverlayView addSubview:buttonView];
   self.buttonView = buttonView;
-  frame = CGRectZero;
+  CGRect frame = CGRectZero;
   frame.origin.x = 0;
   frame.origin.y = CGRectGetMaxY(mainOverlayView.frame)-100-64;
   frame.size.width = CGRectGetWidth(self.view.frame);
@@ -146,6 +93,74 @@
   [self setupFlashButton];
   
   return mainOverlayView;
+}
+
+- (void)setupCameraFrame
+{
+  CGFloat cameraHeight = CGRectGetHeight(self.view.frame)-64-100;
+  CGFloat lineViewHeight = cameraHeight - 50;
+  CGFloat lineViewWidth = lineViewHeight*8.27/11.02;
+  CGFloat xOrigin = (320- lineViewWidth-10)/2;
+  
+  UIView *leftVerticalLine = [UIView new];
+  leftVerticalLine.backgroundColor = [UIColor whiteColor];
+  [self.mainOverlayView addSubview:leftVerticalLine];
+  CGRect frame = CGRectZero;
+  frame.origin.x = xOrigin;
+  frame.origin.y = 25;
+  frame.size.width = 5;
+  frame.size.height = lineViewHeight;
+  leftVerticalLine.frame = frame;
+  
+  UIView *rightVerticalLine = [UIView new];
+  rightVerticalLine.backgroundColor = [UIColor whiteColor];
+  [self.mainOverlayView addSubview:rightVerticalLine];
+  frame = CGRectZero;
+  frame.origin.x = xOrigin+lineViewWidth+5;
+  frame.origin.y = 25;
+  frame.size.width = 5;
+  frame.size.height = lineViewHeight;
+  rightVerticalLine.frame =frame;
+  
+  UIView *leftUpperLine = [UIView new];
+  leftUpperLine.backgroundColor = [UIColor whiteColor];
+  [self.mainOverlayView addSubview:leftUpperLine];
+  frame = CGRectZero;
+  frame.origin.x = xOrigin;
+  frame.origin.y = 20;
+  frame.size.width = 20;
+  frame.size.height = 5;
+  leftUpperLine.frame = frame;
+  
+  UIView *leftLowerLine = [UIView new];
+  leftLowerLine.backgroundColor = [UIColor whiteColor];
+  [self.mainOverlayView addSubview:leftLowerLine];
+  frame = CGRectZero;
+  frame.origin.x = xOrigin;
+  frame.origin.y = 20+lineViewHeight;
+  frame.size.width = 20;
+  frame.size.height = 5;
+  leftLowerLine.frame = frame;
+  
+  UIView *rightUpperLine = [UIView new];
+  rightUpperLine.backgroundColor = [UIColor whiteColor];
+  [self.mainOverlayView addSubview:rightUpperLine];
+  frame = CGRectZero;
+  frame.origin.x = xOrigin+lineViewWidth-10;
+  frame.origin.y = 20;
+  frame.size.width = 20;
+  frame.size.height = 5;
+  rightUpperLine.frame = frame;
+  
+  UIView *rightLowerLine = [UIView new];
+  rightLowerLine.backgroundColor = [UIColor whiteColor];
+  [self.mainOverlayView addSubview:rightLowerLine];
+  frame = CGRectZero;
+  frame.origin.x = xOrigin+lineViewWidth-10;
+  frame.origin.y = 20+lineViewHeight;
+  frame.size.width = 20;
+  frame.size.height = 5;
+  rightLowerLine.frame = frame;
 }
 
 - (void)setupCameraButton
@@ -177,6 +192,8 @@
   flashButton.frame = frame;
 }
 
+#pragma mark- Action methods
+
 - (void)cameraButtonPressed:(id)sender
 {
   [self.imagePicker takePicture];
@@ -198,7 +215,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-  // UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+  UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+  [self.delegate imageToBePassed:image];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

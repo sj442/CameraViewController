@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "EPImageViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +22,8 @@
   self.window.backgroundColor = [UIColor whiteColor];
   [self.window makeKeyAndVisible];
   
-  ViewController *vc = [[ViewController alloc]init];
-  UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:vc];
+  EPImageViewController *imageVC = [[EPImageViewController alloc]init];
+  UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:imageVC];
   self.window.rootViewController = navC;
   return YES;
 }

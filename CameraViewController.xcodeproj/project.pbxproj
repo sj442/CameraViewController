@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3FEB98C31A7AC9D000411BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C21A7AC9D000411BE5 /* main.m */; };
 		3FEB98C61A7AC9D000411BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C51A7AC9D000411BE5 /* AppDelegate.m */; };
-		3FEB98C91A7AC9D000411BE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C81A7AC9D000411BE5 /* ViewController.m */; };
+		3FEB98C91A7AC9D000411BE5 /* EPCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98C81A7AC9D000411BE5 /* EPCameraViewController.m */; };
 		3FEB98CE1A7AC9D000411BE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */; };
 		3FEB98D11A7AC9D000411BE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98CF1A7AC9D000411BE5 /* LaunchScreen.xib */; };
 		3FEB98DD1A7AC9D000411BE5 /* CameraViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEB98DC1A7AC9D000411BE5 /* CameraViewControllerTests.m */; };
@@ -17,6 +17,7 @@
 		3FEB98FA1A7C1F4B00411BE5 /* grayShutter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F61A7C1F4B00411BE5 /* grayShutter.png */; };
 		3FEB98FB1A7C1F4B00411BE5 /* yellowFlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F71A7C1F4B00411BE5 /* yellowFlash.png */; };
 		3FEB98FC1A7C1F4B00411BE5 /* whiteFlash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB98F81A7C1F4B00411BE5 /* whiteFlash.png */; };
+		A32CD5F71A7FCF5D00BEBF1F /* EPImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A32CD5F61A7FCF5D00BEBF1F /* EPImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +36,8 @@
 		3FEB98C21A7AC9D000411BE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FEB98C41A7AC9D000411BE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3FEB98C51A7AC9D000411BE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3FEB98C71A7AC9D000411BE5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3FEB98C81A7AC9D000411BE5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3FEB98C71A7AC9D000411BE5 /* EPCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCameraViewController.h; sourceTree = "<group>"; };
+		3FEB98C81A7AC9D000411BE5 /* EPCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCameraViewController.m; sourceTree = "<group>"; };
 		3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3FEB98D01A7AC9D000411BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3FEB98D61A7AC9D000411BE5 /* CameraViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +47,8 @@
 		3FEB98F61A7C1F4B00411BE5 /* grayShutter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayShutter.png; sourceTree = "<group>"; };
 		3FEB98F71A7C1F4B00411BE5 /* yellowFlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowFlash.png; sourceTree = "<group>"; };
 		3FEB98F81A7C1F4B00411BE5 /* whiteFlash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteFlash.png; sourceTree = "<group>"; };
+		A32CD5F51A7FCF5D00BEBF1F /* EPImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPImageViewController.h; sourceTree = "<group>"; };
+		A32CD5F61A7FCF5D00BEBF1F /* EPImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +92,10 @@
 			children = (
 				3FEB98C41A7AC9D000411BE5 /* AppDelegate.h */,
 				3FEB98C51A7AC9D000411BE5 /* AppDelegate.m */,
-				3FEB98C71A7AC9D000411BE5 /* ViewController.h */,
-				3FEB98C81A7AC9D000411BE5 /* ViewController.m */,
+				3FEB98C71A7AC9D000411BE5 /* EPCameraViewController.h */,
+				3FEB98C81A7AC9D000411BE5 /* EPCameraViewController.m */,
+				A32CD5F51A7FCF5D00BEBF1F /* EPImageViewController.h */,
+				A32CD5F61A7FCF5D00BEBF1F /* EPImageViewController.m */,
 				3FEB98CD1A7AC9D000411BE5 /* Images.xcassets */,
 				3FEB98F51A7C1F4B00411BE5 /* whiteShutter.png */,
 				3FEB98F61A7C1F4B00411BE5 /* grayShutter.png */,
@@ -233,7 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FEB98C91A7AC9D000411BE5 /* ViewController.m in Sources */,
+				3FEB98C91A7AC9D000411BE5 /* EPCameraViewController.m in Sources */,
+				A32CD5F71A7FCF5D00BEBF1F /* EPImageViewController.m in Sources */,
 				3FEB98C61A7AC9D000411BE5 /* AppDelegate.m in Sources */,
 				3FEB98C31A7AC9D000411BE5 /* main.m in Sources */,
 			);
