@@ -1,11 +1,9 @@
-//
-//  ViewController.m
-//  CameraViewController
-//
-//  Created by Sunayna Jain on 1/29/15.
-//  Copyright (c) 2015 Enhatch. All rights reserved.
 
 #import "EPCameraViewController.h"
+
+static CGFloat a4letterRatio = 8.27/11.02;
+
+static CGFloat businessCardRatio = 2/3.5;
 
 @interface EPCameraViewController ()
 
@@ -99,7 +97,16 @@
 {
   CGFloat cameraHeight = CGRectGetHeight(self.view.frame)-64-100;
   CGFloat lineViewHeight = cameraHeight - 50;
-  CGFloat lineViewWidth = lineViewHeight*8.27/11.02;
+  CGFloat lineViewWidth;
+  switch (self.documentType) {
+    case 1:
+      lineViewWidth = lineViewHeight*businessCardRatio;
+      break;
+      
+    default:
+      lineViewWidth = lineViewHeight*a4letterRatio;
+      break;
+  }
   CGFloat xOrigin = (320- lineViewWidth-10)/2;
   
   UIView *leftVerticalLine = [UIView new];

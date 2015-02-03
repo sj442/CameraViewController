@@ -1,10 +1,3 @@
-//
-//  ViewController.h
-//  CameraViewController
-//
-//  Created by Sunayna Jain on 1/29/15.
-//  Copyright (c) 2015 Enhatch. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
@@ -14,9 +7,16 @@
 
 @end
 
+typedef NS_ENUM(NSInteger, EPDocumentType){
+  EPDocumentTypeA4Size,
+  EPDocumentTypeBusinessCard
+};
+
 @interface EPCameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) id <EPCameraViewControllerDelegate> delegate;
+
+@property (nonatomic) EPDocumentType documentType;
 
 @end
 
